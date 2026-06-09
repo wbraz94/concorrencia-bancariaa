@@ -24,24 +24,31 @@ Este projeto tem como objetivo demonstrar na prática os problemas de concorrên
    ```bash
    ./mvnw spring-boot:run
 
-Estrutura do Projeto 
 concorrencia-bancaria/
-├── src/main/java/com/example/bancaria/
-│ ├── controller/
-│ │ └── ContaController.java
-│ │ └── ContaVersionadaController.java
-│ ├── service/
-│ │ └── ContaService.java
-│ │ └── ContaVersionadaService.java
-│ ├── repository/
-│ │ └── ContaRepository.java
-│ │ └── ContaVersionadaRepository.java
-│ ├── entity/
-│ │ └── ContaBancaria.java
-│ │ └── ContaBancariaVersionada.java
-│ └── ConcorrenciaBancariaApplication.java
-├── src/main/resources/
-│ └── application.properties
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── bancaria/
+│   │   │               ├── controller/
+│   │   │               │   ├── ContaController.java
+│   │   │               │   └── ContaVersionadaController.java
+│   │   │               ├── service/
+│   │   │               │   ├── ContaService.java
+│   │   │               │   └── ContaVersionadaService.java
+│   │   │               ├── repository/
+│   │   │               │   ├── ContaRepository.java
+│   │   │               │   └── ContaVersionadaRepository.java
+│   │   │               ├── entity/
+│   │   │               │   ├── ContaBancaria.java
+│   │   │               │   └── ContaBancariaVersionada.java
+│   │   │               └── ConcorrenciaBancariaApplication.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── ContaBancaria.jmx
+│       └── ContaBancariaVersionada.jmx
 ├── pom.xml
 └── teste-concorrencia.jmx
 
@@ -72,7 +79,7 @@ O resultado matemático esperado após todas as operações seria um saldo final
 ## 🛠️ Como Testar no JMeter
 
 1. Abra o Apache JMeter.
-2. Vá em `File -> Open` e selecione o arquivo `teste-concorrencia.jmx` localizado na raiz deste projeto.
+2. Vá em `File -> Open` e selecione o arquivo `ContaBancaria.jmx` e `ContaBancariaVersionada.jmx` localizado na pasta test que fica dentro src deste projeto.
 3. Certifique-se de que a aplicação Spring Boot está rodando.
 4. Clique no botão **Start** (ícone de Play verde) para rodar os testes.
 5. Verifique as abas *View Results Tree* (Árvore de Resultados) e *Summary Report* para analisar as respostas HTTP de cada cenário.
